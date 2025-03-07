@@ -1,12 +1,12 @@
 #!/bin/bask
 
-#fonction qui se lance avec les différentes options
+#fonction qui se lance avec les différentes options.
 fonctionActions () {
         
     tour=1
     choix=0
 
-    while [ $choix -ne 4 ]
+    while [ $choix -ne 4 ] #tant que l'utilisateur n'indique pas 4 (quit), le programme continue de tourner.
     do
         echo "Choisis une action (indiquer 1, 2, 3 ou 4) :"
         read choix
@@ -15,7 +15,7 @@ fonctionActions () {
             1)
                 echo "Entre la nouvelle tâche que tu souhaites ajouter :"
                 read newtache
-                echo $newtache >> taches.txt #add numerotation avec $i après
+                echo $newtache >> taches.txt
                 ;;
             2)
                 echo "Quelle tâche souhaites-tu retirer ?"
