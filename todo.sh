@@ -3,6 +3,11 @@
 #fonction qui se lance avec les différentes options
 fonctionActions () {
         
+    tour=1
+    choix=0
+
+    while [ $choix -ne 4 ]
+    do
         echo "Entre une action (indiquer 1, 2, 3 ou 4) :"
         read choix
 
@@ -25,6 +30,8 @@ fonctionActions () {
                 echo "Option invalide. Veuillez entrer 1, 2 ou 3."
                 ;;
         esac
+        ((tour++))
+    done
 }
 
 
