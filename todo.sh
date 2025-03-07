@@ -3,7 +3,6 @@
 #fonction qui se lance avec les différentes options.
 fonctionActions () {
         
-    tour=1
     choix=0
 
     while [ $choix -ne 4 ] #tant que l'utilisateur n'indique pas 4 (quit), le programme continue de tourner.
@@ -37,7 +36,6 @@ fonctionActions () {
                 echo "Option invalide. Entre 1, 2, 3 ou 4 - pour quitter."
                 ;;
         esac
-        ((tour++))
     done
 }
 
