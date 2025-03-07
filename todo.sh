@@ -47,10 +47,10 @@ echo ""
 echo "Veux-tu commencer ?"
 read choixdebut
 
-if [ $choixdebut = "Non" ]
+if [ ${choixdebut,,} = "non" ]
 then
     echo "Bye."
-elif [ $choixdebut = "Oui" ]
+elif [ ${choixdebut,,} = "oui" ]
 then
     fonctionActions
 else 
