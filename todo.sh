@@ -30,15 +30,22 @@ fonctionActions () {
 
 echo ""
 echo "Bienvenue sur ta to-do list !"
-echo "Que souhaites-tu faire ?"
 echo ""
+echo "Tu peux :"
 echo "1. Ajouter une nouvelle tâche"
 echo "2. Retirer une tâche"
 echo "3. Afficher les tâches"
 echo "4. Quitter"
 echo ""
+echo "Veux-tu commencer ?"
+read choixdebut
 
-#mettre le while qui va faire que temps que la personne ne fait pas 4, le programme continue de tourner > while choix != 4 > fonctionActions
-
-
-fonctionActions
+if [ $choixdebut = "Non" ]
+then
+    echo "Bye."
+elif [ $choixdebut = "Oui" ]
+then
+    fonctionActions
+else 
+    echo "Réponse invalide. Il faut entrer 'Oui' ou 'Non'."
+fi
