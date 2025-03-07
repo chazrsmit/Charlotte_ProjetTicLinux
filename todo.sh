@@ -34,7 +34,7 @@ fonctionActions () {
                 ;;
             *)
                 echo ""
-                echo "Option invalide. Veuillez entrer 1, 2 ou 3."
+                echo "Option invalide. Entre 1, 2, 3 ou 4 - pour quitter."
                 ;;
         esac
         ((tour++))
@@ -54,12 +54,12 @@ echo ""
 echo "Veux-tu commencer ? (oui / non)"
 read choixdebut
 
-if [ ${choixdebut,,} = "non" ]
+if [ ${choixdebut,,} = "non" ] #${variable,,} permet de transformer la valeur entrée en lowercase (Non = non)
 then
     echo "Bye."
 elif [ ${choixdebut,,} = "oui" ]
 then
-    fonctionActions
+    fonctionActions #lancement de la fonction et du programme
 else 
     echo "Réponse invalide. Il faut entrer 'Oui' ou 'Non'."
 fi
