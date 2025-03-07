@@ -14,6 +14,7 @@ fonctionActions () {
         case $choix in
             1)
                 echo "Voici les tâches dans ta liste :"
+                echo "$(<taches.txt)"
                 ;;
             2)
                 echo "Entre la nouvelle tâche que tu souhaites ajouter :"
