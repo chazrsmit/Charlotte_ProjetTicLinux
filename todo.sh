@@ -8,26 +8,32 @@ fonctionActions () {
 
     while [ $choix -ne 4 ] #tant que l'utilisateur n'indique pas 4 (quit), le programme continue de tourner.
     do
+        echo ""
         echo "Choisis une action (indiquer 1, 2, 3 ou 4) :"
         read choix
 
         case $choix in
             1)
+                echo ""
                 echo "Voici les tâches dans ta liste :"
                 echo "$(<taches.txt)"
                 ;;
             2)
+                echo ""
                 echo "Entre la nouvelle tâche que tu souhaites ajouter :"
                 read newtache
                 echo $newtache >> taches.txt #les tâches entrées s'ajoutent dans le fichier taches.txt
                 ;;
             3)
+                echo ""
                 echo "Quelle tâche souhaites-tu retirer ?"
                 ;;
             4)
+                echo ""
                 echo "Bye."
                 ;;
             *)
+                echo ""
                 echo "Option invalide. Veuillez entrer 1, 2 ou 3."
                 ;;
         esac
