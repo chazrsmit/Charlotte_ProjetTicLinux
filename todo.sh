@@ -13,15 +13,15 @@ fonctionActions () {
 
         case $choix in
             1)
-                echo "Entre la nouvelle tâche que tu souhaites ajouter :"
-                read newtache
-                echo $newtache >> taches.txt
+                echo "Voici les tâches dans ta liste :"
                 ;;
             2)
-                echo "Quelle tâche souhaites-tu retirer ?"
+                echo "Entre la nouvelle tâche que tu souhaites ajouter :"
+                read newtache
+                echo $newtache >> taches.txt #les tâches entrées s'ajoutent dans le fichier taches.txt
                 ;;
             3)
-                echo "Voici les tâches dans ta liste :"
+                echo "Quelle tâche souhaites-tu retirer ?"
                 ;;
             4)
                 echo "Bye."
@@ -39,9 +39,9 @@ echo ""
 echo "Bienvenue sur ta to-do list !"
 echo ""
 echo "Tu peux :"
-echo "1. Ajouter une nouvelle tâche"
-echo "2. Retirer une tâche"
-echo "3. Afficher les tâches"
+echo "1. Afficher les tâches"
+echo "2. Ajouter une nouvelle tâche"
+echo "3. Retirer une tâche"
 echo "4. Quitter"
 echo ""
 echo "Veux-tu commencer ? (oui / non)"
