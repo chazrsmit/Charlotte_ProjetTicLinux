@@ -10,3 +10,20 @@ echo ""
 echo "> entrer 1, 2 ou 3"
 read choix
 
+# listeT=()
+# #implémenter à chaque tâche entrée
+
+case §choix in
+    1)
+        echo "Ecris la nouvelle tâche ici :"
+        read newT
+        ;;
+    2)
+        echo "Quelle tâche souhaites-tu retirer ?"
+        #echo liste des tâches > utiliser la commande for (pour chaque tâche présente dans la liste des tâches, echo $tâche > "for tache in "${listeT[@]}"")
+        #
+        ;;
+    3)
+        echo "bye"
+        ;;
+esac
