@@ -38,4 +38,7 @@ echo "3. Afficher les tâches"
 echo "4. Quitter"
 echo ""
 
+#mettre le while qui va faire que temps que la personne ne fait pas 4, le programme continue de tourner > while choix != 4 > fonctionActions
+
+
 fonctionActions
