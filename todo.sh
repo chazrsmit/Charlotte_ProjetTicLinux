@@ -21,6 +21,23 @@ if [ $choixdebut -eq 4 ]
 then
     echo "Bye."
 else
+    case $choixdebut in
+    1)
+        echo "Entre la nouvelle tâche que tu souhaites ajouter :"
+        read newtache
+        echo $newtache >> taches.txt #add numerotation avec $i après
+        ;;
+    2)
+        echo "Quelle tâche souhaites-tu retirer ?"
+        ;;
+    3)
+        echo "Voici les tâches dans ta liste :"
+        ;;
+    *)
+        echo "Option invalide. Veuillez entrer 1, 2 ou 3."
+        ;;
+    esac
+
     tour=1
     choix=0
 
