@@ -8,7 +8,7 @@ fonctionActions () {
 
     while [ $choix -ne 4 ]
     do
-        echo "Entre une action (indiquer 1, 2, 3 ou 4) :"
+        echo "Choisis une action (indiquer 1, 2, 3 ou 4) :"
         read choix
 
         case $choix in
