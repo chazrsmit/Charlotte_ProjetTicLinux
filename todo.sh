@@ -44,7 +44,7 @@ echo "2. Retirer une tâche"
 echo "3. Afficher les tâches"
 echo "4. Quitter"
 echo ""
-echo "Veux-tu commencer ?"
+echo "Veux-tu commencer ? (oui / non)"
 read choixdebut
 
 if [ ${choixdebut,,} = "non" ]
