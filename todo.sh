@@ -6,6 +6,7 @@ fonctionActions () {
     choix=0
 
     while [ $choix -ne 4 ] #tant que l'utilisateur n'indique pas 4 (quit), le programme continue de tourner.
+    #attention : faire en sorte que ça ne quit pas quand on rentre un caractère (le while s'attend à un integer)
     do
         echo ""
         echo "Choisis une action (indiquer 1, 2, 3 ou 4) :"
