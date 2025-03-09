@@ -16,8 +16,13 @@ fonctionActions () {
         case $choix in
             1)
                 echo ""
-                echo "Voici les tâches dans ta liste :"
-                cat -n "taches.txt" #cette commande permet d'afficher la liste avec des numéros ; sinon echo "$(<taches.txt)" mais n'affiche pas de numéro
+                if [ ! -s "taches.txt" ]; #permet de vérifier si la liste de tâches est vide 
+                then
+                    echo "La liste de tâches est vide."
+                else
+                    echo "Voici les tâches dans ta liste :"
+                    cat -n "taches.txt" #cette commande permet d'afficher la liste avec des numéros ; sinon echo "$(<taches.txt)" mais n'affiche pas de numéro
+                fi
                 ;;
             2)
                 echo ""
@@ -37,7 +42,19 @@ fonctionActions () {
                     cat -n "taches.txt"
                     echo ""
                     echo "Entre le numéro de la tâche à supprimer :"
-                    read numsupp
+                    read numero_tache
+                        if [[ "$numero_tache" =~ ^[0-9]+$ ]] #cette partie permet de vérifier que l'utilisateur a bien entré un numéro > ^[0-9]+$ permet de vérifier cela
+                        then
+                            nombre_lignes=$(wc -l < "taches.txt") #comptage du nombre de lignes dans le fichier tache.txt qui sera stocké dans cette variable
+
+                            if [ "$numero_tache" -gt 0 ] && [ "$numero_tache" -le "$nombre_lignes" ]
+                            then
+                                sed -i "${numero_tache}d" "taches.txt"
+                                echo "Tâche numéro $numero_tache supprimée avec succès !"
+                            else
+                                echo "Erreur: Le numéro de tâche doit être entre 1 et $nombre_lignes."
+                            fi
+                        fi
                 fi
                 ;;
             4)
