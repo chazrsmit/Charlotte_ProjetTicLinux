@@ -1,5 +1,9 @@
 #!/bin/bask
 
+
+# Fichier de stockage des tâches
+FICHIER_TACHES="taches.txt"
+
 #fonction qui se lance avec les différentes options.
 fonctionActions () {
         
@@ -22,11 +26,16 @@ fonctionActions () {
                 echo ""
                 echo "Entre la nouvelle tâche que tu souhaites ajouter :"
                 read newtache
-                echo $newtache >> taches.txt #les tâches entrées s'ajoutent dans le fichier taches.txt
+                echo $1$newtache >> taches.txt #les tâches entrées s'ajoutent dans le fichier taches.txt
                 ;;
             3)
                 echo ""
-                echo "Quelle tâche souhaites-tu retirer ?"
+                if [ ! -s "$FICHIER_TACHES" ];
+                then
+                    echo "La liste de tâches est vide."
+                else
+                    echo "Quelle tâche souhaites-tu retirer ?"
+                fi
                 ;;
             4)
                 echo ""
