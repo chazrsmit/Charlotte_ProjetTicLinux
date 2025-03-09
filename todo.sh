@@ -32,6 +32,12 @@ fonctionActions () {
                     echo "La liste de tâches est vide."
                 else
                     echo "Quelle tâche souhaites-tu retirer ?"
+                    echo ""
+                    echo "Voici les tâches dans ta liste :"
+                    cat -n "taches.txt"
+                    echo ""
+                    echo "Entre le numéro de la tâche à supprimer :"
+                    read numsupp
                 fi
                 ;;
             4)
