@@ -1,9 +1,6 @@
 #!/bin/bask
 
 
-# Fichier de stockage des tâches
-FICHIER_TACHES="taches.txt"
-
 #fonction qui se lance avec les différentes options.
 fonctionActions () {
         
@@ -30,7 +27,7 @@ fonctionActions () {
                 ;;
             3)
                 echo ""
-                if [ ! -s "$FICHIER_TACHES" ];
+                if [ ! -s taches.txt ]; #permet de vérifier si la liste de tâches est vide 
                 then
                     echo "La liste de tâches est vide."
                 else
@@ -49,25 +46,30 @@ fonctionActions () {
     done
 }
 
+start () {
 
-echo ""
-echo "Bienvenue sur ta to-do list !"
-echo ""
-echo "Tu peux :"
-echo "1. Afficher les tâches"
-echo "2. Ajouter une nouvelle tâche"
-echo "3. Retirer une tâche"
-echo "4. Quitter"
-echo ""
-echo "Veux-tu commencer ? (oui / non)"
-read choixdebut
+    echo ""
+    echo "Bienvenue sur ta to-do list !"
+    echo ""
+    echo "Tu peux :"
+    echo "1. Afficher les tâches"
+    echo "2. Ajouter une nouvelle tâche"
+    echo "3. Retirer une tâche"
+    echo "4. Quitter"
+    echo ""
+    echo "Veux-tu commencer ? (oui / non)"
+    read choixdebut
 
-if [ ${choixdebut,,} = "non" ] #${variable,,} permet de transformer la valeur entrée en lowercase (Non = non)
-then
-    echo "Bye."
-elif [ ${choixdebut,,} = "oui" ]
-then
-    fonctionActions #lancement de la fonction et du programme
-else 
-    echo "Réponse invalide. Il faut entrer 'Oui' ou 'Non'."
-fi
+    if [ ${choixdebut,,} = "non" ] #${variable,,} permet de transformer la valeur entrée en lowercase (Non = non)
+    then
+        echo "Bye."
+    elif [ ${choixdebut,,} = "oui" ]
+    then
+        fonctionActions #lancement de la fonction et du programme
+    else 
+        echo "Réponse invalide. Il faut entrer 'Oui' ou 'Non'."
+        start #on redemande à la personne si elle veut continuer
+    fi
+}
+
+start
