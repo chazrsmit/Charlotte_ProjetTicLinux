@@ -52,7 +52,7 @@ fonctionActions () {
                                 sed -i "${numero_tache}d" "taches.txt"
                                 echo "Tâche numéro $numero_tache supprimée avec succès !"
                             else
-                                echo "Erreur: Le numéro de tâche doit être entre 1 et $nombre_lignes."
+                                echo "Erreur: Le numéro de tâche doit être compris entre 1 et $nombre_lignes."
                             fi
                         fi
                 fi
