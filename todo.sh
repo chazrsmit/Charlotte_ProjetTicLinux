@@ -17,7 +17,7 @@ fonctionActions () {
             1)
                 echo ""
                 echo "Voici les tâches dans ta liste :"
-                echo "$(<taches.txt)"
+                cat -n "taches.txt" #cette commande permet d'afficher la liste avec des numéros ; sinon echo "$(<taches.txt)" mais n'affiche pas de numéro
                 ;;
             2)
                 echo ""
@@ -27,7 +27,7 @@ fonctionActions () {
                 ;;
             3)
                 echo ""
-                if [ ! -s taches.txt ]; #permet de vérifier si la liste de tâches est vide 
+                if [ ! -s "taches.txt" ]; #permet de vérifier si la liste de tâches est vide 
                 then
                     echo "La liste de tâches est vide."
                 else
